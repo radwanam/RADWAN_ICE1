@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package card;
+import java.util.*;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -14,14 +16,38 @@ public class CardTrick {
     
     public static void main(String[] args)
     {
+        Random rnd = new Random();
         Card[] magicHand = new Card[7];
-        
+        // make 7 cards using random method
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
+            c.setValue(rnd.nextInt(13)+1);
+            c.setSuit(Card.SUITS[rnd.nextInt(4)]);
+            magicHand[i] = c;
             //c.setValue(insert call to random number generator here)
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            System.out.println(c.getValue() +" " + c.getSuit());
         }
+        Scanner inp = new Scanner(System.in);
+        
+        System.out.println("Please enter card suit:");
+        String userSuit = inp.nextLine();
+        
+        System.out.println("Please enter card value: (Ace - 1, Jack - 11, Queen - 12, King - 13)");
+        int userValue = inp.nextInt();
+        
+        boolean flag = false;
+        for (int i = 0 ; i < magicHand.length; i++){
+            if(userValue == magicHand[i].getValue() && userSuit.equals(magicHand[i].getSuit())){
+                System.out.println("Card number " + i + " matches with your card");
+                flag = true;
+            } 
+        }
+        if(!flag){
+            System.out.println("No card matches with your card");
+        }
+        
         
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
