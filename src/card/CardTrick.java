@@ -31,7 +31,7 @@ public class CardTrick {
         System.out.println("Please enter card suit:");
         String userSuit = inp.nextLine();
         
-        System.out.println("Please enter card value: (Ace - 1, Jack - 11, Queen - 12, King - 13)");
+        System.out.println("Please enter card value (Ace - 1, Jack - 11, Queen - 12, King - 13):");
         int userValue = inp.nextInt();
         
         boolean flag = false;
