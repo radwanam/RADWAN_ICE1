@@ -44,6 +44,10 @@ public class CardTrick {
         if(!flag){
             System.out.println("No card matches with your card");
         }
+
+        Card luckyCard = new Card();
+        luckyCard.setSuit("Hearts");
+        luckyCard.setValue(2);
         
         
         //insert code to ask the user for Card value and suit, create their card
