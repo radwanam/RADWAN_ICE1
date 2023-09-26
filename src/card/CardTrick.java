@@ -28,31 +28,20 @@ public class CardTrick {
         }
         Scanner inp = new Scanner(System.in);
         
-        System.out.println("Please enter card suit:");
-        String userSuit = inp.nextLine();
-        
-        System.out.println("Please enter card value (Ace - 1, Jack - 11, Queen - 12, King - 13):");
-        int userValue = inp.nextInt();
-        
-        boolean flag = false;
-        for (int i = 0 ; i < magicHand.length; i++){
-            if(userValue == magicHand[i].getValue() && userSuit.equals(magicHand[i].getSuit())){
-                System.out.println("Card number " + i + " matches with your card");
-                flag = true;
-            } 
-        }
-        if(!flag){
-            System.out.println("No card matches with your card");
-        }
-
         Card luckyCard = new Card();
         luckyCard.setSuit("Hearts");
         luckyCard.setValue(2);
         
-        
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
+        boolean flag = false;
+        for (int i = 0 ; i < magicHand.length; i++){
+            if(luckyCard.getValue() == magicHand[i].getValue() && luckyCard.getSuit().equals(magicHand[i].getSuit())){
+                System.out.println("You won!");
+                flag = true;
+            } 
+        }
+        if(!flag){
+            System.out.println("You lose");
+        }
     }
     
 }
