@@ -27,7 +27,6 @@ public class CardTrick {
             magicHand[i] = c;
             //c.setValue(insert call to random number generator here)
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-            System.out.println(c.getValue() +" " + c.getSuit());
         }
         Scanner inp = new Scanner(System.in);
         
